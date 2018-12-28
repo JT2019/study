@@ -1,0 +1,182 @@
+//
+//  PrefixHeader.pch
+//  JiuTian01
+//
+//  Created by Limy on 2018/12/14.
+//  Copyright © 2018年 Limy. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+//以6进行适配
+#define ScaleWidth6(x) x/750.0*[UIScreen mainScreen].bounds.size.width
+#define ScaleHeight6(x) x/1334.0*[UIScreen mainScreen].bounds.size.height
+//获取最大最小的XY
+#define MaxX(v) CGRectGetMaxX(v)
+#define MinX(v) CGRectGetMinX(v)
+#define MaxY(v) CGRectGetMaxY(v)
+#define MinY(v) CGRectGetMinY(v)
+//屏幕的宽高
+#define ScreenWidth                               [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight                              [UIScreen mainScreen].bounds.size.height
+
+#define CGRectOrigin(v)    v.frame.origin
+#define CGRectSize(v)      v.frame.size
+
+#define KScreenRate (375 / ScreenWidth)
+#define KSuitFloat(float) (float / KScreenRate)
+#define KSuitSize(width, height) CGSizeMake(width / KScreenRate, height / KScreenRate)
+#define KSuitPoint(x, y) CGPointMake(x / KScreenRate, y / KScreenRate)
+#define KSuitRect(x, y, width, heigth) CGRectMake(x / KScreenRate, y / KScreenRate, width / KScreenRate, heigth / KScreenRate)
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+//判断手机型号
+#define IS_iPhone4_4s                       ([[UIScreen mainScreen] bounds].size.height > 400 && [[UIScreen mainScreen] bounds].size.height <= 480)
+#define IS_iPhone5                          ([[UIScreen mainScreen] bounds].size.height >= 568 && [[UIScreen mainScreen] bounds].size.height < 667)
+#define IS_iPhone6                          ([[UIScreen mainScreen] bounds].size.height >= 667 && [[UIScreen mainScreen] bounds].size.height < 736)
+#define IS_iPhone6P                         ([[UIScreen mainScreen] bounds].size.height >= 736 )
+#define iPhoneX     ([[UIScreen mainScreen] bounds].size.width == 375.f && [[UIScreen mainScreen] bounds].size.height == 812.f)
+#define kHeight_NavContentBar 44.0f
+#define kHeight_StatusBar (iPhoneX==YES)?44.0f: 20.0f
+#define kHeight_NavBar (iPhoneX==YES)?88.0f: 64.0f
+#define kHeight_TabBar (iPhoneX==YES)?83.0f: 49.0f
+//沙盒储存数据
+#define setUserDefault(object,key) [[NSUserDefaults standardUserDefaults] setObject:object forKey:key]
+#define getUserDefault(key) [[NSUserDefaults standardUserDefaults] objectForKey:key]
+
+//字体
+#define H22                [UIFont systemFontOfSize:22]
+#define H20                [UIFont systemFontOfSize:20]
+#define H18                [UIFont systemFontOfSize:18]
+#define H16                [UIFont systemFontOfSize:16]
+#define H15                [UIFont systemFontOfSize:15]
+#define H14                [UIFont systemFontOfSize:14]
+#define H13                [UIFont systemFontOfSize:13]
+#define H12                [UIFont systemFontOfSize:12]
+#define H11                [UIFont systemFontOfSize:11]
+#define H10                [UIFont systemFontOfSize:10]
+//颜色
+#define Color_RGB(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0  alpha:1.0]
+
+#define Color_BG           Color_RGB(245, 245, 245)
+#define Color_Line         Color_RGB(240, 240, 240)
+#define Color_H1           Color_RGB(77, 77, 77)
+#define Color_Random       [UIColor colorWithRed:arc4random()%256/255.0 green:arc4random()%256/255.0 blue:arc4random()%256/255.0 alpha:1.0]
+
+#define Color_White        [UIColor whiteColor]
+#define Color_Gray         [UIColor grayColor]
+#define Color_LightGray    [UIColor lightGrayColor]
+#define Color_Black        [UIColor blackColor]
+#define Color_Red          [UIColor redColor]
+#define Color_Clear        [UIColor clearColor]
+#define Color_Green        [UIColor greenColor]
+#define Color_Blue         [UIColor blueColor]
+#define Color_Orange       [UIColor orangeColor]
+#define Color_Yellow       [UIColor yellowColor]
+
+//RGB颜色设置
+#define RGBSColor(r) [UIColor colorWithRed:r/255.0 green:r/255.0 blue:r/255.0 alpha:1.0f]
+#define RGBColor(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0f]
+#define RGBACGColor(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a].CGColor
+#define RGBAColor(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+//?????
+#define WEAK(type) __weak typeof(type) weak##type = type;
+#define WEAk(weakSelf) __unsafe_unretained __typeof(&*self)weakSelf = self;
+
+//button
+# define BtnNormal            UIControlStateNormal
+# define BtnTouchUpInside     UIControlEventTouchUpInside
+# define BtnStateSelected     UIControlStateSelected
+# define BtnHighlighted       UIControlStateHighlighted
+
+#define ThemeColor  [Tools colorWithHexString:@"#2b75e5"]
+#define whriteColor [Tools colorWithHexString:@"#ffffff"]
+#define WordColor   [Tools colorWithHexString:@"#333333"]
+#define grayWordColor   [Tools colorWithHexString:@"#4a4a4a"]
+#define LineColor       [Tools colorWithHexString:@"#f4f5fa"]
+#define huangColor  [Tools colorWithHexString:@"ffae00"]
+/**
+ *  userdefault字段
+ */
+//常用字段可写此处
+#define UserName @"userName"
+#define PASSWord @"password"
+#define urll        @"http://192.168.61.11:8018/files/download.do?showImgFlag=1&fileName="
+//接口
+#define CH_MainUrl                  @"http://192.168.53.53:8080"
+
+//首页
+#define CH_Url_HomePage             @"/api/homePage"
+//登录
+#define CH_Url_Login                @"/api/login"
+//派车单
+#define CH_Url_dispatchList         @"/api/dispatchList"
+//派车单上传
+#define CH_Url_dispatchListEntry    @"/api/dispatchList/entry"
+//派车单-新派车单接受
+#define CH_Url_dispatchListAccept    @"/api/dispatchList/accept"
+//个人中心
+#define CH_Url_personal              @"/api/personal"
+//个人中心-修改密码
+#define CH_Url_password              @"/api/personal/password"
+//个人中心-集团通知
+#define CH_Url_groupNotification     @"/api/personal/groupNotification"
+//个人中心-车辆交接
+#define CH_Url_vehicleHandover       @"/api/personal/vehicleHandover"
+//个人中心-车辆交接-详情
+#define CH_Url_handoverCar           @"/api/personal/handoverCar"
+//个人中心-车辆交接-保存
+#define CH_Url_handoverCarPreserve   @"/api/personal/handoverCarPreserve"
+//个人中心-证件到期时间
+#define CH_Url_certificateMaturity   @"/api/personal/certificateMaturity"
+//个人中心-全部派车单
+#define CH_Url_personalDispatchList         @"/api/personal/dispatchList"
+//消息-提醒
+#define CH_Url_remind               @"/api/news/remind"
+//消息-通知
+#define CH_Url_notice               @"/api/news/notice"
+//消息-提醒/通知-详情
+#define CH_Url_noticeDetails        @"/api/news/noticeDetails"
+//维修保养上传
+#define CH_Url_maintenanceUpload    @"/api/maintenanceUpload"
+//车辆安检
+#define CH_Url_securityCheck        @"/api/securityCheck"
+//车辆安检-随车附件
+#define CH_Url_attachments          @"/api/securityCheck/attachments"
+//车辆安检-随车附件-保存
+#define CH_Url_attachmentsPreserve   @"/api/securityCheck/attachmentsPreserve"
+//回车报账
+#define CH_Url_reimbursement         @"/api/reimbursement"
+//回车报账-保存
+#define CH_Url_reimbursementPreserve  @"/api/reimbursement/preserve"
+//报账查询
+#define CH_Url_reimbursementInquiries   @"/api/reimbursement/inquiries"
+//个人中心-全部派车单-分类查询
+#define CH_Url_classified               @"/api/personal/dispatchList/classified"
+//倒胎换胎
+//#define CH_Url_certificateMaturity   @"/api/personal/certificateMaturity"
+//派车单-路线信息
+#define CH_Url_dispatchListRoute   @"/api/dispatchList/route"
+//登出
+#define CH_Url_doLogin               @"/api/login/doLogin"
+
+
+
+#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+
+//常用三方库库
+
+
+#import "SDWebImage/UIImageView+WebCache.h"
+#import <SDWebImage/UIButton+WebCache.h>
+#import "NetWorkingTools.h"
+#import "Tools.h"
+#import "LabelHeight.h"
+#import <YYModel.h>
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* Global_pch */

@@ -1,0 +1,30 @@
+PODS:
+  - JSONModel (1.8.0)
+  - Masonry (1.1.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - JSONModel
+  - Masonry
+  - SDWebImage
+  - YYModel
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - JSONModel
+    - Masonry
+    - SDWebImage
+    - YYModel
+
+SPEC CHECKSUMS:
+  JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: f41bc91f807c294a3cff32b22494c8d6756f9eaf
+
+COCOAPODS: 1.5.3
